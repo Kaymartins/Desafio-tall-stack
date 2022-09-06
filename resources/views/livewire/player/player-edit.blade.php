@@ -1,8 +1,16 @@
 <div>
     <div class="px-6 py-2">
-        <h3 class="text-lg font-medium text-rose-800">Criar Jogador</h3>
-        <form wire:submit.prevent="submit" class="space-y-8 divide-y divide-gray-200">
+        <h3 class="text-lg font-medium text-rose-800">Editar Jogador</h3>
+        <form wire:submit.prevent="update" class="space-y-8 divide-y divide-gray-200">
             <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+
+                @if(session()->has('message'))
+                    <div class="col-span-3 bg-blue-500 h-16 rounded flex flex-col justify-center">
+                        <div class="ml-12 text-lg font-bold">
+                            {{session('message')}}
+                        </div>
+                    </div>
+                @endif
                 <div class="col-span-3">
                     <label for="name" class="text-sm font-medium text-gray-700">Name</label>
                     <input type="text" wire:model="name" id="name" autocomplete="name" class="w-full flex-1 flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 rounded-md sm:text-sm border-gray-300">
@@ -43,7 +51,7 @@
 
 
                 <div class="col-span-2">
-                    <button type="submit" class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white">Adicionar Jogador</button>
+                    <button type="submit" class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white">Editar Jogador</button>
                 </div>
             </div>
         </form>
