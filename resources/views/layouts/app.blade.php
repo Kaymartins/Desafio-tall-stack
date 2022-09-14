@@ -21,9 +21,15 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     @livewireStyles
 </head>
-<body>
-    @yield('content')
-    @livewireScripts
-</body>
+<body class="font-sans antialiased">
+    <div class="min-h-screen bg-gray-100">
+        @include('layouts.navigation')
 
+        <!-- Page Content -->
+        <main>
+            @yield('content')
+            @livewireScripts
+        </main>
+    </div>
+</body>
 </html>

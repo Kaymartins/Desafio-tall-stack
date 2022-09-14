@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\Player\PlayerEdit;
+use App\Http\Livewire\Player\PlayerIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/players/edit/{player}', PlayerEdit::class);
+Route::get('/players', PlayerIndex::class)->name('players.index');
