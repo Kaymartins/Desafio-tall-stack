@@ -61,36 +61,32 @@
             @endcomponent
 
             <!--TABLE-->
-            <div class="w-full col-span-3 mt-8">
-                <table class="w-full">
-                    <thead class="bg-gray-50 border-b-2 border-gray-200">
-                    <tr>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Nome</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Idade</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Nacionalidade</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left"></th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($players as $player)
-                        <tr class="bg-white">
-                            <td class="p-3 text-sm text-gray-700"> {{$player->name}}</td>
-                            <td class="p-3 text-sm text-gray-700"> {{$player->age}}</td>
-                            <td class="p-3 text-sm text-gray-700"> {{$player->nationality}}</td>
-                            <td class="p-3 text-sm text-gray-700">
-                                <button type="button" class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer" x-on:click="open = ! open"
-                                wire:click="editPlayer({{$player->id}})">Editar</button>
-                            </td>
-                            <td class="p-3 text-sm text-gray-700">
-                                <button type="button" class="bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer"
-                                wire:click="deletePlayer({{$player->id}})">Excluir</button>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
+            @component('components.table')
+                @slot('header')
+                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Nome</th>
+                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Idade</th>
+                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Nacionalidade</th>
+                    <th class="p-3 text-sm font-semibold tracking-wide text-left"></th>
+                    <th class="p-3 text-sm font-semibold tracking-wide text-left"></th>
+                @endslot
+                @slot('body')
+                        @foreach($players as $player)
+                            <tr class="bg-white">
+                                <td class="p-3 text-sm text-gray-700"> {{$player->name}}</td>
+                                <td class="p-3 text-sm text-gray-700"> {{$player->age}}</td>
+                                <td class="p-3 text-sm text-gray-700"> {{$player->nationality}}</td>
+                                <td class="p-3 text-sm text-gray-700">
+                                    <button type="button" class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer" x-on:click="open = ! open"
+                                            wire:click="editPlayer({{$player->id}})">Editar</button>
+                                </td>
+                                <td class="p-3 text-sm text-gray-700">
+                                    <button type="button" class="bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer"
+                                            wire:click="deletePlayer({{$player->id}})">Excluir</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                @endslot
+            @endcomponent
         </div>
     </div>
 </div>
