@@ -1,5 +1,5 @@
-<div class="overflow-auto rounded-lg shadow">
-    <div class="w-full col-span-3 mt-8">
+<div class="overflow-auto rounded-lg shadow mt-8">
+    <div class="w-full col-span-3">
         <table class="w-full">
             <thead class="bg-gray-50 border-b-2 border-gray-200">
             <tr>

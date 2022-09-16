@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Player\PlayerIndex;
+use App\Http\Livewire\Team\TeamIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('welcome');
-});
+})->name('dashboard');
 
 Route::get('/players', PlayerIndex::class)->name('players.index');
+Route::get('/teams', TeamIndex::class)->name('teams.index');
