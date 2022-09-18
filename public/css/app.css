@@ -741,18 +741,6 @@ select {
 .mr-1 {
   margin-right: 0.25rem;
 }
-.mt-16 {
-  margin-top: 4rem;
-}
-.mt-28 {
-  margin-top: 7rem;
-}
-.mt-36 {
-  margin-top: 9rem;
-}
-.mt-52 {
-  margin-top: 13rem;
-}
 .block {
   display: block;
 }
@@ -801,6 +789,9 @@ select {
 .w-6 {
   width: 1.5rem;
 }
+.w-48 {
+  width: 12rem;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -822,14 +813,14 @@ select {
 .flex-col {
   flex-direction: column;
 }
-.items-start {
-  align-items: flex-start;
-}
 .items-center {
   align-items: center;
 }
 .justify-start {
   justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
 }
 .justify-center {
   justify-content: center;
@@ -885,6 +876,10 @@ select {
 }
 .rounded {
   border-radius: 0.25rem;
+}
+.rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 .border {
   border-width: 1px;
@@ -999,6 +994,9 @@ select {
 .pt-8 {
   padding-top: 2rem;
 }
+.pt-10 {
+  padding-top: 2.5rem;
+}
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -1014,20 +1012,17 @@ select {
 .pb-3 {
   padding-bottom: 0.75rem;
 }
-.pt-52 {
-  padding-top: 13rem;
-}
-.pb-52 {
-  padding-bottom: 13rem;
-}
-.pt-10 {
-  padding-top: 2.5rem;
-}
 .text-left {
   text-align: left;
 }
 .text-center {
   text-align: center;
+}
+.text-end {
+  text-align: end;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -1233,6 +1228,11 @@ select {
     border-color: rgb(55 65 81 / var(--tw-border-opacity));
   }
 
+  .dark\:border-gray-600 {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+
   .dark\:bg-gray-900 {
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity));
@@ -1241,6 +1241,11 @@ select {
   .dark\:bg-gray-800 {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-gray-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
   .dark\:text-gray-500 {

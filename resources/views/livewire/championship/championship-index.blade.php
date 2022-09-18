@@ -8,12 +8,12 @@
             </button>
 
             <!--MODAL-->
-            @if($viewTeam)
-                @include('livewire.team.view')
+            @if($viewChampionship)
+                @include('livewire.championship.view')
             @elseif($isEdit)
-                @include('livewire.team.edit')
+                @include('livewire.championship.edit')
             @else
-                @include('livewire.team.create')
+                @include('livewire.championship.create')
             @endif
 
             <!--TABLE-->
@@ -21,34 +21,34 @@
                 @slot('style','w-full')
                 @slot('header')
                     <th class="p-3 text-sm font-semibold tracking-wide text-left">Nome</th>
-                    <th class="p-3 text-sm font-semibold tracking-wide text-left">País</th>
-                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Pontuação</th>
+                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Jogo</th>
+                    <th class="p-3 text-sm font-semibold tracking-wide text-left">Data de Inicio</th>
                     <th class="p-3 text-sm font-semibold tracking-wide text-left"></th>
 
                 @endslot
                 @slot('body')
-                    @foreach($teams as $team)
+                    @foreach($championships as $championship)
                         <tr class="bg-white">
-                            <td class="p-3 text-sm text-gray-700"> {{$team->name}}</td>
-                            <td class="p-3 text-sm text-gray-700"> {{$team->country}}</td>
-                            <td class="p-3 text-sm text-gray-700"> {{$team->points}}</td>
+                            <td class="p-3 text-sm text-gray-700"> {{$championship->name}}</td>
+                            <td class="p-3 text-sm text-gray-700"> {{$championship->game}}</td>
+                            <td class="p-3 text-sm text-gray-700"> {{$championship->start_date}}</td>
                             <td class="p-3 text-sm text-gray-700">
 
                                 <button type="button"
                                         class="bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer"
                                         x-on:click="open = ! open"
-                                        wire:click="viewTeam({{$team->id}})">Visualizar
+                                        wire:click="viewChampionship({{$championship->id}})">Visualizar
                                 </button>
 
                                 <button type="button"
                                         class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
                                         x-on:click="open = ! open"
-                                        wire:click="editTeam({{$team->id}})">Editar
+                                        wire:click="editChampionship({{$championship->id}})">Editar
                                 </button>
 
                                 <button type="button"
                                         class="bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer"
-                                        wire:click="deleteTeam({{$team->id}})">Excluir
+                                        wire:click="deleteChampionship({{$championship->id}})">Excluir
                                 </button>
                             </td>
                         </tr>

@@ -11,7 +11,13 @@ class Team extends Model
 
     protected $guarded = [];
 
-    public function players(){
+    public function players()
+    {
         return $this->hasMany(Player::class);
+    }
+
+    public function championships()
+    {
+        return $this->belongsToMany(Championship::class)->withTimestamps();
     }
 }

@@ -53,6 +53,7 @@
             </button>
 
             <div x-show="open" class="overflow-auto">
+
                 @component('components.table')
                     @slot('header')
                         <th class="p-3 text-sm font-semibold tracking-wide text-left">Nome</th>
@@ -66,6 +67,9 @@
                                 <td class="p-3 text-sm text-gray-700"> {{$player->name}}</td>
                                 <td class="p-3 text-sm text-gray-700"> {{$player->age}}</td>
                                 <td class="p-3 text-sm text-gray-700"> {{$player->nationality}}</td>
+                                <td>
+                                    <button type="button" wire:click.prevent="removePlayerFromTeam({{$player->id}})" class="bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer">X</button>
+                                </td>
                             </tr>
                         @endforeach
                     @endslot

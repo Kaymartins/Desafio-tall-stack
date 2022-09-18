@@ -120,6 +120,6 @@ class PlayerIndex extends Component
         return view('livewire.player.player-index',[
             'players' => Player::all(),
             'teams' => Team::all(),
-        ])->layout('players.index');
+        ])->layout('layouts.index');
     }
 }

@@ -21,7 +21,12 @@ class TeamIndex extends Component
     public $isEdit = false;
 
     public $team;
+
+    //array com todos os players sem time
     public $players = [];
+
+    //jogador selecionado para entrar no time
+    public $player;
 
     protected $rules = [
         'name' => 'required|min:3|max:256|string',
@@ -37,6 +42,15 @@ class TeamIndex extends Component
         $this->isEdit = false;
         $this->resetValidation();
         $this->reset();
+    }
+
+    public function removePlayerFromTeam($id)
+    {
+        Player::findOrFail($id)->update([
+            'team_id' => null
+        ]);
+
+        $this->players = $this->team->find($this->team->id)->players;
     }
 
     public function create()
@@ -83,11 +97,15 @@ class TeamIndex extends Component
         $this->points = $this->team->points;
         $this->wins = $this->team->wins;
         $this->defeats = $this->team->defeats;
+
+        $this->players = Player::all()->where('team_id',null);
+
         $this->isEdit = true;
     }
 
     public function updateTeam()
     {
+
         $this->validate();
 
         $this->team->update([
@@ -98,6 +116,13 @@ class TeamIndex extends Component
             'defeats' => $this->defeats,
         ]);
 
+        if($this->player){
+            Player::findOrFail($this->player)->update([
+                'team_id' => $this->team->id
+            ]);
+        }
+
+        $this->reset();
         $this->dispatchBrowserEvent('close-modal');
     }
 
@@ -111,6 +136,6 @@ class TeamIndex extends Component
     {
         return view('livewire.team.team-index',[
             'teams' => Team::all(),
-        ])->layout('teams.index');
+        ])->layout('layouts.index');
     }
 }
