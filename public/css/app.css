@@ -741,6 +741,18 @@ select {
 .mr-1 {
   margin-right: 0.25rem;
 }
+.mt-16 {
+  margin-top: 4rem;
+}
+.mt-28 {
+  margin-top: 7rem;
+}
+.mt-36 {
+  margin-top: 9rem;
+}
+.mt-52 {
+  margin-top: 13rem;
+}
 .block {
   display: block;
 }
@@ -810,14 +822,23 @@ select {
 .flex-col {
   flex-direction: column;
 }
+.items-start {
+  align-items: flex-start;
+}
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
 }
 .justify-center {
   justify-content: center;
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .gap-1 {
   gap: 0.25rem;
@@ -992,6 +1013,15 @@ select {
 }
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+.pt-52 {
+  padding-top: 13rem;
+}
+.pb-52 {
+  padding-bottom: 13rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .text-left {
   text-align: left;

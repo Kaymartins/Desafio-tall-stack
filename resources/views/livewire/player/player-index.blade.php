@@ -22,6 +22,7 @@
 
             <!--TABLE-->
             @component('components.table')
+                @slot('style','w-full')
                 @slot('header')
                     <th class="p-3 text-sm font-semibold tracking-wide text-left">Nome</th>
                     <th class="p-3 text-sm font-semibold tracking-wide text-left">Idade</th>

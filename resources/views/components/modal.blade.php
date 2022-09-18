@@ -1,5 +1,5 @@
 <div x-show="open">
-    <div :class="{'block':open, 'hidden': ! open}" class="hidden fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center">
+    <div :class="{'block':open, 'hidden': ! open}" class="hidden fixed inset-0 bg-white bg-opacity-75 flex flex-col items-center justify-start pt-10 overflow-auto">
         <div class="flex flex-col bg-white shadow-2xl rounded-lg border-gray-400 p6">
 
             <div class="px-6 py-2">
