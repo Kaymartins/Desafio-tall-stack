@@ -33,6 +33,11 @@
                             <td class="p-3 text-sm text-gray-700"> {{$championship->game}}</td>
                             <td class="p-3 text-sm text-gray-700"> {{$championship->start_date}}</td>
                             <td class="p-3 text-sm text-gray-700">
+                                
+                                <a href=""
+                                    class="bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer mr-1">
+                                    Dashboard
+                                </a>
 
                                 <button type="button"
                                         class="bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer"

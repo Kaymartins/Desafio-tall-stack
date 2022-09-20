@@ -23,3 +23,4 @@ Route::get('/dashboard', function () {
 Route::get('/players', PlayerIndex::class)->name('players.index');
 Route::get('/teams', TeamIndex::class)->name('teams.index');
 Route::get('/championships', ChampionshipIndex::class)->name('championships.index');
+Route:get('/championship/dashboard/{championship}');
