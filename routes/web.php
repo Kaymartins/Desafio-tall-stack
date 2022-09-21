@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Championship\ChampionshipDashboard;
 use App\Http\Livewire\Championship\ChampionshipIndex;
 use App\Http\Livewire\Player\PlayerIndex;
 use App\Http\Livewire\Team\TeamIndex;
@@ -23,3 +24,4 @@ Route::get('/dashboard', function () {
 Route::get('/players', PlayerIndex::class)->name('players.index');
 Route::get('/teams', TeamIndex::class)->name('teams.index');
 Route::get('/championships', ChampionshipIndex::class)->name('championships.index');
+route::get('/championship/dashboard/{championship}', ChampionshipDashboard::class)->name('championship.dashboard');
