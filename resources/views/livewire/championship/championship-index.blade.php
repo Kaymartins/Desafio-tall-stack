@@ -35,24 +35,24 @@
                             <td class="p-3 text-sm text-gray-700">
 
                                 <a href="{{route('championship.dashboard',$championship->id)}}"
-                                        class="bg-gray-500 py-2 mr-1 px-3 rounded-md shadow-sm text-sm hover:bg-gray-700 font-medium text-white cursor-pointer">
+                                        class="mt-4 sm:mt-0 bg-gray-500 py-2 mr-1 px-3 rounded-md shadow-sm text-sm hover:bg-gray-700 font-medium text-white cursor-pointer">
                                     Dashboard
                                 </a>
 
                                 <button type="button"
-                                        class="bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer"
+                                        class="mt-4 sm:mt-0 bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer"
                                         x-on:click="open = ! open"
                                         wire:click="viewChampionship({{$championship->id}})">Visualizar
                                 </button>
 
                                 <button type="button"
-                                        class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
+                                        class="mt-2 sm:mt-0 bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
                                         x-on:click="open = ! open"
                                         wire:click="editChampionship({{$championship->id}})">Editar
                                 </button>
 
                                 <button type="button"
-                                        class="bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer"
+                                        class="mt-2 sm:mt-0 bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer"
                                         wire:click="deleteChampionship({{$championship->id}})">Excluir
                                 </button>
                             </td>
