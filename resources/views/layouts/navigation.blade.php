@@ -20,6 +20,9 @@
                     <x-nav-link :href="route('championships.index')" :active="request()->routeIs('championships.index')">
                         {{ __('Campeonatos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('rankings.index')" :active="request()->routeIs('rankings.index')">
+                        {{ __('Rankings') }}
+                    </x-nav-link>
                 </div>
             </div>
 

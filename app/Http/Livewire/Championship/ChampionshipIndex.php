@@ -95,7 +95,8 @@ class ChampionshipIndex extends Component
             'end_date' => $this->end_date,
         ]);
 
-        $this->championship->teams()->sync($this->selectedTeams);
+        $team_id = $this->selectedTeams ?? [];
+        $this->championship->teams()->attach($team_id);
         $this->championship->save();
 
         $this->reset();
