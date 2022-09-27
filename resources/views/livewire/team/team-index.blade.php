@@ -3,7 +3,7 @@
         <div class="col-span-3" x-data="{ open:false }" x-on:close-modal.window="open = false">
             <button type="button"
                     wire:click="create"
-                    class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
+                    class="bg-blue-500 mt-8 md:mt-0 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
                     x-on:click="open = ! open">Criar
             </button>
 
@@ -35,19 +35,19 @@
                             <td class="p-3 text-sm text-gray-700">
 
                                 <button type="button"
-                                        class="bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer"
+                                        class="mt-2 sm:mt-0 bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer"
                                         x-on:click="open = ! open"
                                         wire:click="viewTeam({{$team->id}})">Visualizar
                                 </button>
 
                                 <button type="button"
-                                        class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
+                                        class="mt-2 sm:mt-0 bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
                                         x-on:click="open = ! open"
                                         wire:click="editTeam({{$team->id}})">Editar
                                 </button>
 
                                 <button type="button"
-                                        class="bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer"
+                                        class="mt-2 sm:mt-0 bg-red-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-red-800 font-medium text-white cursor-pointer"
                                         wire:click="deleteTeam({{$team->id}})">Excluir
                                 </button>
                             </td>

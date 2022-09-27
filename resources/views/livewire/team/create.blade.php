@@ -45,6 +45,19 @@
                 @error('defeats'){{$message}}@enderror
             </div>
         </div>
+
+        <div class="col-span-1">
+            <label for="team_id" class="text-sm font-medium text-gray-700">Selecione os jogadores</label>
+            <select name="player_id[]"
+                    id="player_id"
+                    class="block w-full border border-gray-300 rounded-md multiple"
+                    wire:model="selectedPlayers" multiple>
+                @foreach($players as $player)
+                    <option value="{{$player->id}}">{{$player->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
     @endslot
     @slot('option')
             <button type="submit" wire:click.prevent="submit"

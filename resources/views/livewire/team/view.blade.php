@@ -62,7 +62,7 @@
                         <th class="p-3 text-sm font-semibold tracking-wide text-left"></th>
                     @endslot
                     @slot('body')
-                        @foreach($players as $player)
+                        @foreach($playersOnTeam as $player)
                             <tr>
                                 <td class="p-3 text-sm text-gray-700"> {{$player->name}}</td>
                                 <td class="p-3 text-sm text-gray-700"> {{$player->age}}</td>

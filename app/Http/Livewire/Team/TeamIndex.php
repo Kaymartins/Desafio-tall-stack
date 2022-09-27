@@ -21,12 +21,13 @@ class TeamIndex extends Component
     public $isEdit = false;
 
     public $team;
+    public $selectedPlayers = [];
 
     //array com todos os players sem time
     public $players = [];
 
     //jogador selecionado para entrar no time
-    public $player;
+    public $playersOnTeam;
 
     protected $rules = [
         'name' => 'required|min:3|max:256|string',
@@ -50,7 +51,7 @@ class TeamIndex extends Component
             'team_id' => null
         ]);
 
-        $this->players = $this->team->find($this->team->id)->players;
+        $this->playersOnTeam = $this->team->find($this->team->id)->players;
     }
 
     public function create()
@@ -63,13 +64,20 @@ class TeamIndex extends Component
     public function submit(){
         $this->validate();
 
-        Team::create([
+        $team = Team::create([
             'name' => $this->name,
             'country' => $this->country,
             'points' => $this->points,
             'wins' => $this->wins,
             'defeats' => $this->defeats
         ]);
+
+        foreach($this->selectedPlayers as $player){
+            $player = Player::findOrFail($player);
+            $player->update([
+                'team_id' => $team->id,
+            ]);
+        }
 
         $this->dispatchBrowserEvent('close-modal');
         $this->reset();
@@ -86,7 +94,7 @@ class TeamIndex extends Component
         $this->wins = $this->team->wins;
         $this->defeats = $this->team->defeats;
 
-        $this->players = $this->team->find($id)->players;
+        $this->playersOnTeam = $this->team->find($id)->players;
     }
 
     public function editTeam($id)
@@ -97,8 +105,6 @@ class TeamIndex extends Component
         $this->points = $this->team->points;
         $this->wins = $this->team->wins;
         $this->defeats = $this->team->defeats;
-
-        $this->players = Player::all()->where('team_id',null);
 
         $this->isEdit = true;
     }
@@ -116,9 +122,10 @@ class TeamIndex extends Component
             'defeats' => $this->defeats,
         ]);
 
-        if($this->player){
-            Player::findOrFail($this->player)->update([
-                'team_id' => $this->team->id
+        foreach($this->selectedPlayers as $player){
+            $player = Player::findOrFail($player);
+            $player->update([
+                'team_id' => $this->team->id,
             ]);
         }
 
@@ -134,6 +141,8 @@ class TeamIndex extends Component
 
     public function render()
     {
+        $this->players = Player::all()->where('team_id',null);
+
         return view('livewire.team.team-index',[
             'teams' => Team::all(),
         ])->layout('layouts.index');

@@ -50,16 +50,15 @@
             <button type="button"
                     class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
                     x-on:click="open = !open">
-                Adicionar novo jogador
+                Adicionar jogadores
             </button>
             <div x-show="open" class="overflow-auto">
                 <div class="col-span-1">
-                    <label for="player" class="text-sm font-medium text-gray-700">Jogador</label>
-                    <select name="player"
-                            id="player"
-                            class="block w-full border border-gray-300 rounded-md"
-                            wire:model="player">
-                        <option value={{null}}>Selecione um Jogador</option>
+                    <label for="team_id" class="text-sm font-medium text-gray-700">Selecione os jogadores</label>
+                    <select name="player_id[]"
+                            id="player_id"
+                            class="block w-full border border-gray-300 rounded-md multiple"
+                            wire:model="selectedPlayers" multiple>
                         @foreach($players as $player)
                             <option value="{{$player->id}}">{{$player->name}}</option>
                         @endforeach

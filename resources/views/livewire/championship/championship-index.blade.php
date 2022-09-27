@@ -3,7 +3,7 @@
         <div class="col-span-3" x-data="{ open:false }" x-on:close-modal.window="open = false">
             <button type="button"
                     wire:click="create"
-                    class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
+                    class="bg-blue-500 mt-8 md:mt-0 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer"
                     x-on:click="open = ! open">Criar
             </button>
 
@@ -33,11 +33,6 @@
                             <td class="p-3 text-sm text-gray-700"> {{$championship->game}}</td>
                             <td class="p-3 text-sm text-gray-700"> {{$championship->start_date}}</td>
                             <td class="p-3 text-sm text-gray-700">
-                                
-                                <a href=""
-                                    class="bg-gray-700 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-gray-800 font-medium text-white cursor-pointer mr-1">
-                                    Dashboard
-                                </a>
 
                                 <a href="{{route('championship.dashboard',$championship->id)}}"
                                         class="mt-4 sm:mt-0 bg-gray-500 py-2 mr-1 px-3 rounded-md shadow-sm text-sm hover:bg-gray-700 font-medium text-white cursor-pointer">

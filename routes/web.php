@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->name('dashboard');
+Route::get('/', PlayerIndex::class)->name('players.index');
 
 Route::get('/players', PlayerIndex::class)->name('players.index');
 Route::get('/teams', TeamIndex::class)->name('teams.index');

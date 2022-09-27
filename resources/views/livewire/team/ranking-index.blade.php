@@ -2,12 +2,12 @@
     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
         <div class="col-span-3">
             <a href="{{route("championships.index")}}"
-               class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer">
+               class="bg-blue-500 mt-8 md:mt-0 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white cursor-pointer">
                 Voltar
             </a>
 
             <!--FILTER-->
-            <div class="flex justify-between mt-8">
+            <div class="flex flex-column md:flex-row justify-between mt-8">
                 <div>
                     <select name="filter"
                              id="filter"
