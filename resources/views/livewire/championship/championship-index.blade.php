@@ -31,7 +31,7 @@
                         <tr class="bg-white">
                             <td class="p-3 text-sm text-gray-700"> {{$championship->name}}</td>
                             <td class="p-3 text-sm text-gray-700"> {{$championship->game}}</td>
-                            <td class="p-3 text-sm text-gray-700"> {{$championship->start_date}}</td>
+                            <td class="p-3 text-sm text-gray-700"> {{date('d/m/Y',strtotime($championship->start_date))}}</td>
                             <td class="p-3 text-sm text-gray-700">
 
                                 <a href="{{route('championship.dashboard',$championship->id)}}"
